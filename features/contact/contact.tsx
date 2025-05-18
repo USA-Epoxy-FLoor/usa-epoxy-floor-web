@@ -64,8 +64,14 @@ export function Contact() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-orange-500" />
-                <Link href="https://maps.app.goo.gl/ekcRwxYhTyReX98X9">
+                <Link
+                  href="https://maps.app.goo.gl/ekcRwxYhTyReX98X9"
+                  className="flex flex-col"
+                >
                   <span>1070 US-9 Suite 102, Fishkill, NY 12524</span>
+                  <span className="text-primary">
+                    Showroom Visits by Appointment Only
+                  </span>
                 </Link>
               </div>
             </div>
