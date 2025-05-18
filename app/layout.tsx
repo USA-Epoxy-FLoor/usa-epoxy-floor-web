@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "USA Epoxy Floor",
     images: [
       {
-        url: "/epoxy/heor.png",
+        url: "/epoxy/hero.png",
         width: 1200,
         height: 630,
         alt: "USA Epoxy Floor - Professional Epoxy Flooring Services",
