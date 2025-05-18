@@ -1,3 +1,5 @@
+# This code is the property of Techwave LLC. No part of this codebase may be reused or reproduced without explicit permission.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

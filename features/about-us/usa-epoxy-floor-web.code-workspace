@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../website"
+	},
+	{
+		"path": "../../../asset-vision-3d"
+	}
+],
+  "settings": {}
+}
