@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react";
-import { ServiceAreaItemProps } from "./service-area-item";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { contactPath } from "@/constants/paths";
+import { IconTitleProps } from "@/components/ui/icon-tile";
 
-export const SERVICE_AREA_CONTENT: PropsWithChildren<ServiceAreaItemProps>[] = [
+export const SERVICE_AREA_CONTENT: PropsWithChildren<IconTitleProps>[] = [
   {
     title: "New York",
     content:
