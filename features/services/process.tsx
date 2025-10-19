@@ -39,7 +39,7 @@ export const Process = () => {
         title="How We Work"
         intro="Our streamlined approach ensures a smooth experience from start to finish"
       >
-        <div className="flex justify-center flex-wrap mt-6">
+        <div className="flex justify-center flex-wrap gap-4 mt-6">
           {steps.map((eachStep, i) => (
             <IconTile
               {...eachStep}

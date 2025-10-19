@@ -38,7 +38,7 @@ const ServiceCard = ({
   description: string;
   icon: ReactNode;
 }) => (
-  <Card className="text-left flex-1">
+  <Card className="text-left min-w-xs flex-1">
     <CardContent className="pt-6">
       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100 mb-4">
         {icon}

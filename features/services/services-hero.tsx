@@ -3,7 +3,7 @@ import { HeroButtons } from "../about-us/hero-section";
 
 export const ServicesHero = () => {
   return (
-    <section className="w-full py-8 min-h-[70vh] max-w-prose mx-auto text-center space-y-6 flex flex-col justify-center relative">
+    <section className="w-full py-8 min-h-[70vh] max-w-5xl mx-auto text-center space-y-6 flex flex-col justify-center relative px-4">
       <h1 className="text-4xl font-bold tracking-tighter text-orange-500 sm:text-5xl md:text-6xl">
         Services
       </h1>

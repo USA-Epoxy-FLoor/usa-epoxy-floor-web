@@ -37,7 +37,7 @@ export const Commitment = () => {
           " We're dedicated to exceeding your expectations on every project"
         }
       >
-        <div className="flex justify-center gap-6 py-10 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6 py-10 max-w-5xl mx-auto">
           <CommitmentCard
             title="Our Promise"
             description="Our goal is to exceed your expectations and deliver a finished product that you will be proud to show off. We take pride in our work and are committed to providing our clients with the best possible service and support throughout the entire process."

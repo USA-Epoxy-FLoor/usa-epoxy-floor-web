@@ -37,7 +37,7 @@ export function Contact() {
     <section
       id="contact"
       className={cn(
-        "w-full light:bg-orange-50 min-h-[100vh] flex items-center",
+        "w-full min-h-[100vh] flex items-center scroll-mt-16",
         BACKGROUND_EVEN
       )}
     >
