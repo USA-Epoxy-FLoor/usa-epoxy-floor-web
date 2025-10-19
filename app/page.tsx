@@ -1,7 +1,5 @@
-import { Header } from "@/features/header/header";
 import { Contact } from "@/features/contact/contact";
-import { Footer } from "@/features/home/footer";
-import { HeroSection } from "@/features/home/hero-section";
+import { HeroSection } from "@/features/home/hero-section/hero-section";
 import { Services } from "@/features/home/services";
 import { Testimonials } from "@/features/home/testimonials";
 import { LocalBusinessJsonLd } from "@/features/structured-data";
@@ -11,21 +9,16 @@ import { ServiceArea } from "@/features/home/service-areas";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <main className="flex flex-col space-y-12 bg-gradient-to-b from-orange-50 to-white dark:from-gray-950 dark:to-gray-950/90">
       <LocalBusinessJsonLd />
+      <HeroSection />
+      <Features />
+      <StockImages />
 
-      <Header />
-      <main>
-        <HeroSection />
-        <Features />
-        <StockImages />
-
-        <Services />
-        <ServiceArea />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+      <Services />
+      <ServiceArea />
+      <Testimonials />
+      <Contact />
+    </main>
   );
 }

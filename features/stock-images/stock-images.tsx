@@ -1,3 +1,4 @@
+import { ContainerLayout } from "@/components/ui/container-layout";
 import Image from "next/image";
 import React from "react";
 
@@ -60,18 +61,18 @@ const images = [
 
 export const StockImages = () => {
   return (
-    <div className="w-full py-12 px-4 md:py-24 lg:py-32">
-      <div className="container py-12 md:py-16 mx-auto space-y-4">
-        <div className="flex items-center">
-          <p className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-white mx-auto">
-            Insipiration
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="w-full py-8 max-w-7xl mx-auto">
+      <ContainerLayout
+        tag={"Inspiration"}
+        title={"Innovative Epoxy Flooring Designs"}
+        intro={"Tailored epoxy flooring for residential and commercial spaces"}
+        className="w-full"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-auto mt-6 justify-items-center-safe content-center">
           {images.map((image) => (
             <figure
               key={image.id}
-              className="group overflow-hidden rounded-lg relative"
+              className="group overflow-hidden rounded-lg relative aspect-square w-full max-w-sm"
             >
               <div className="aspect-square relative overflow-hidden">
                 <Image
@@ -89,7 +90,7 @@ export const StockImages = () => {
             </figure>
           ))}
         </div>
-      </div>
+      </ContainerLayout>
     </div>
   );
 };

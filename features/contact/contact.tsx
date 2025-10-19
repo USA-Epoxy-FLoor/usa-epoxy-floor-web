@@ -8,11 +8,13 @@ import { EMPTY_ACTION_STATE } from "@/components/form/utils/to-action-state";
 import { useActionFeedback } from "@/components/form/hooks/use-action-feedback";
 import { toast } from "sonner";
 import { ContactFormInput, ContactFormTextarea } from "./contact-form-item";
-import { Phone, MapPin, FacebookIcon, InstagramIcon } from "lucide-react";
+import { MapPin, FacebookIcon, InstagramIcon, LucidePhone } from "lucide-react";
 import { SubmitButton } from "@/components/form/submit-button";
 import { cn } from "@/lib/utils";
 import { BACKGROUND_EVEN } from "@/constants/styles";
 import Link from "next/link";
+import { ContainerLayout } from "@/components/ui/container-layout";
+import { ContactItem } from "./contact-item";
 
 export function Contact() {
   const [actionState, action] = useActionState(
@@ -35,70 +37,24 @@ export function Contact() {
     <section
       id="contact"
       className={cn(
-        "w-full py-12 md:py-24 lg:py-32 light:bg-orange-50",
+        "w-full light:bg-orange-50 min-h-[100vh] flex items-center",
         BACKGROUND_EVEN
       )}
     >
-      <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-orange-500 px-3 py-1 text-sm text-white">
-                Contact Us
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Ready to Transform Your Floors?
-              </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-300">
-                Get in touch with our team for a free consultation and quote.
-                We&apos;ll help you choose the perfect epoxy flooring solution
-                for your needs.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Phone className="h-5 w-5 text-orange-500" />
-                <Link href="tel:+18454642539">
-                  <span>(845) 464-2539</span>
-                </Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-orange-500" />
-                <Link
-                  href="https://maps.app.goo.gl/ekcRwxYhTyReX98X9"
-                  className="flex flex-col"
-                >
-                  <span>1070 US-9 Suite 102, Fishkill, NY 12524</span>
-                  <span className="text-primary">
-                    Showroom Visits by Appointment Only
-                  </span>
-                </Link>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <Button variant="outline" size="icon">
-                <Link
-                  href="https://www.facebook.com/usaepoxyfloor"
-                  target="_blank"
-                >
-                  <FacebookIcon className="text-primary" />
-                  <span className="sr-only">Facebook</span>
-                </Link>
-              </Button>
-              <Button variant="outline" size="icon">
-                <Link
-                  href="https://www.instagram.com/usaepoxyfloors/"
-                  target="_blank"
-                >
-                  <InstagramIcon className="text-primary" />
-                  <span className="sr-only">Instagram</span>
-                </Link>
-              </Button>
-            </div>
-          </div>
-          <Card>
+      <ContainerLayout
+        tag="Contact Us"
+        className="px-4 lg:px-6 relative z-10 max-w-5xl"
+        title="Ready to Transform Your Floors?"
+        intro="Get in touch with our team for a free consultation and quote.
+                We'll help you choose the perfect epoxy flooring solution
+                for your needs."
+      >
+        <div className="flex gap-12 flex-wrap justify-center mt-6">
+          <Card className="border flex-2/5">
             <CardHeader>
-              <CardTitle>Get a Free Quote</CardTitle>
+              <CardTitle className="text-left text-xl">
+                Get a Free Quote
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <form className="space-y-4" id="contact-us-form" action={action}>
@@ -157,8 +113,43 @@ export function Contact() {
               </form>
             </CardContent>
           </Card>
+          <div className="flex flex-col space-y-4 py-4">
+            <div className="space-y-4">
+              <ContactItem
+                icon={<LucidePhone className="h-5 w-5 text-orange-500 pt-1" />}
+                href="tel:+18454642539"
+                text="(845) 464-2539"
+              />
+              <ContactItem
+                icon={<MapPin className="h-5 w-5 text-orange-500 pt-1" />}
+                href="https://maps.app.goo.gl/ekcRwxYhTyReX98X9"
+                text="1070 US-9 Suite 102, Fishkill, NY 12524"
+                additionaText="Showroom Visits by Appointment Only"
+              />
+            </div>
+            <div className="flex gap-4">
+              <Button variant="outline" size="icon">
+                <Link
+                  href="https://www.facebook.com/usaepoxyfloor"
+                  target="_blank"
+                >
+                  <FacebookIcon className="text-primary" />
+                  <span className="sr-only">Facebook</span>
+                </Link>
+              </Button>
+              <Button variant="outline" size="icon">
+                <Link
+                  href="https://www.instagram.com/usaepoxyfloors/"
+                  target="_blank"
+                >
+                  <InstagramIcon className="text-primary" />
+                  <span className="sr-only">Instagram</span>
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </div>
+      </ContainerLayout>
     </section>
   );
 }

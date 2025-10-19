@@ -1,9 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { LucideMail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
+export const HeroButtons = ({ className }: { className?: string }) => (
+  <div className={cn("flex gap-4 justify-center", className)}>
+    <Button className="bg-orange-500 hover:bg-orange-600" asChild>
+      <Link href="/#contact">
+        Contact Us
+        <LucideMail className="ml-2 h-4 w-4" />
+      </Link>
+    </Button>
+    <Button variant="outline" asChild>
+      <Link href="/#gallery">View Our Work</Link>
+    </Button>
+  </div>
+);
 export const HeroSection = () => {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
@@ -46,17 +59,7 @@ export const HeroSection = () => {
                 commercial clients, and we strive to achieve the best results.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="bg-orange-500 hover:bg-orange-600" asChild>
-                <Link href="/#contact">
-                  Contact Us
-                  <Phone className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href="/#gallery">View Our Work</Link>
-              </Button>
-            </div>
+            <HeroButtons className="justify-start" />
           </div>
         </div>
       </div>

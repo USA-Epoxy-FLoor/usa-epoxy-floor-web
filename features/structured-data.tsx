@@ -2,10 +2,11 @@ export function LocalBusinessJsonLd() {
   const businessData = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": "https://www.usaepoxyfloor.com/#localbusiness",
     name: "USA Epoxy Floor",
     image: "https://www.usaepoxyfloor.com/logo.jpeg",
     url: "https://www.usaepoxyfloor.com",
-    telephone: "(845) 464-2539",
+    telephone: "+1-845-464-2539",
     address: {
       "@type": "PostalAddress",
       streetAddress: "1070 US-9 Suite 102",
@@ -32,7 +33,25 @@ export function LocalBusinessJsonLd() {
       "https://www.instagram.com/usaepoxyfloor",
     ],
     priceRange: "$$",
-    servesCuisine: "Epoxy Flooring",
+    serviceType: "Epoxy Flooring",
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Epoxy Flooring Installation",
+          serviceType: "Floor Coating / Epoxy Flooring",
+          areaServed: [
+            { "@type": "City", name: "Fishkill" },
+            { "@type": "City", name: "Poughkeepsie" },
+            { "@type": "AdministrativeArea", name: "Dutchess County" },
+            { "@type": "City", name: "Albany" },
+            { "@type": "City", name: "New York City" },
+          ],
+        },
+      },
+    ],
+
     areaServed: [
       {
         "@type": "City",
@@ -44,15 +63,24 @@ export function LocalBusinessJsonLd() {
       },
       {
         "@type": "City",
-        name: "Fiskkill",
+        name: "Fishkill",
       },
       {
         "@type": "City",
-        name: "New york city",
+        name: "New York City",
       },
       {
         "@type": "City",
         name: "Albany",
+      },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+1-845-464-2539",
+        contactType: "sales",
+        areaServed: "US",
+        availableLanguage: ["English"],
       },
     ],
   };

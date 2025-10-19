@@ -29,7 +29,7 @@ export const NAV_ITEMS: { url: string; name: string; isATag?: boolean }[] = [
   },
   {
     url: euTeDesignPath(),
-    name: "Eu-Te Design LLC",
+    name: "Eu-Te Design",
   },
   {
     url: contactPath(),

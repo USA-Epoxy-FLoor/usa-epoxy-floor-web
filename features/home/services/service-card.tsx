@@ -12,7 +12,7 @@ export type ServiceCardProps = {
 export const ServiceCard = ({ icon, title, content }: ServiceCardProps) => {
   return (
     <Card>
-      <CardContent className="pt-6">
+      <CardContent className="pt-6 flex flex-col items-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100 mb-4">
           {icon}
         </div>

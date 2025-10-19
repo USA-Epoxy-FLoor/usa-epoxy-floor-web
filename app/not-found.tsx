@@ -11,7 +11,7 @@ export default function NotFound() {
         have been moved or deleted.
       </p>
       <Button asChild className="mt-8">
-        <Link href="/">Return to Home</Link>
+        <Link href="/">Return Home</Link>
       </Button>
     </div>
   );

@@ -9,7 +9,7 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-[background]/70 shadow">
       <div className="container flex h-16 items-center justify-between mx-auto px-4">
         <div className="flex items-center gap-2">
           <Image
@@ -27,19 +27,11 @@ export const Header = () => {
         <Nav />
 
         <div className="flex items-center gap-4">
-          <Button
-            variant="outline"
-            size="sm"
-            className="hidden md:flex gap-2"
-            asChild
-          >
+          <Button asChild className="">
             <Link href="tel:+18454642539">
               <Phone className="h-4 w-4" />
-              <span>(845) 464-2539</span>
+              <span className="hidden sm:block">(845) 464-2539</span>
             </Link>
-          </Button>
-          <Button asChild className="bg-orange-500 hover:bg-orange-600">
-            <Link href="/#contact">Get a Quote</Link>
           </Button>
           <ThemeSwitcher />
 

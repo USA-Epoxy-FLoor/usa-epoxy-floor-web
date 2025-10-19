@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/themes/themes-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { Header } from "@/features/header/header";
+import { Footer } from "@/features/home/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,13 +64,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-accent`}
       >
         <ThemeProvider>
+          <Header />
+
           {children}
           <Toaster expand />
+          <Footer />
         </ThemeProvider>
         <SpeedInsights />
       </body>

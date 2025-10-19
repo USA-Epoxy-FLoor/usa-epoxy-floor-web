@@ -15,7 +15,7 @@ const ParticleBackground = () => {
     if (!ctx) return;
 
     let particlesArray: Particle[] = [];
-    const numberOfParticles = 75;
+    const numberOfParticles = 15;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -41,7 +41,7 @@ const ParticleBackground = () => {
         this.size = Math.random() * 5 + 1;
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
-        this.color = "rgba(249, 115, 22, 0.6)";
+        this.color = "#f97316";
       }
       draw() {
         if (ctx) {
@@ -93,6 +93,7 @@ const ParticleBackground = () => {
       {!isMobile && (
         <canvas
           ref={canvasRef}
+          className="w-full"
           style={{ position: "absolute", top: 0, left: 0, zIndex: 0 }}
         />
       )}

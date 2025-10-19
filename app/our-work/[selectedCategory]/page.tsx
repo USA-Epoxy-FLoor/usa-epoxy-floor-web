@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { contactPath, ourWorkPath } from "@/constants/paths";
+import { ourWorkPath } from "@/constants/paths";
 import { ReelProps, Reels } from "@/features/our-work/reels";
-import { Instagram } from "lucide-react";
-import Link from "next/link";
 
 // Instagram reel IDs provided
 // const reelIds = [
@@ -23,7 +21,6 @@ import Link from "next/link";
 //   "CuKlBStADtD",
 // ]
 
-// Sample project data
 const projectData: ReelProps["projects"] = [
   {
     id: 1,
@@ -110,19 +107,26 @@ const projectData: ReelProps["projects"] = [
     location: "New Jersey",
   },
 
+  // {
+  //   id: 14,
+  //   reelId: "CuKynejAqXi",
+  //   title: "Distribution Center Flooring",
+  //   category: "Industrial",
+  //   location: "Pennsylvania",
+  // },
+  // {
+  //   id: 15,
+  //   reelId: "CuKlBStADtD",
+  //   title: "Metallic Epoxy Showroom",
+  //   category: "Decorative",
+  //   location: "Massachusetts",
+  // },
   {
-    id: 14,
-    reelId: "CuKynejAqXi",
-    title: "Distribution Center Flooring",
-    category: "Industrial",
-    location: "Pennsylvania",
-  },
-  {
-    id: 15,
-    reelId: "CuKlBStADtD",
-    title: "Metallic Epoxy Showroom",
-    category: "Decorative",
-    location: "Massachusetts",
+    id: 16,
+    reelId: "DMnxRUvAitS",
+    title: "Metallic Epoxy Office",
+    category: "Residential",
+    location: "New York",
   },
 ];
 // Project categories for filtering
@@ -139,73 +143,33 @@ export default async function OurWorkPage({
 }: {
   params: Promise<{ selectedCategory: string }>;
 }) {
-  const { selectedCategory = "All" } = await params;
+  const { selectedCategory = "all" } = await params;
 
   const filteredProjects =
-    selectedCategory !== "All"
-      ? projectData.filter((project) => project.category === selectedCategory)
+    selectedCategory !== "all"
+      ? projectData.filter(
+          (project) => project.category.toLocaleLowerCase() === selectedCategory
+        )
       : projectData;
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-orange-50 to-white dark:from-gray-950 dark:to-gray-950/90">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tighter text-orange-500 sm:text-5xl md:text-6xl">
-              Our Work
-            </h1>
-            <h2 className="text-2xl font-semibold">
-              Portfolio of Epoxy Flooring Projects
-            </h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed">
-              See the quality and diversity of our epoxy flooring installations
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Button variant="outline" size="sm" asChild className="gap-2">
-                <a
-                  href="https://www.instagram.com/usaepoxyfloors/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram className="h-4 w-4" />
-                  <span>Follow Us on Instagram</span>
-                </a>
-              </Button>
-              <Button
-                className="bg-orange-500 hover:bg-orange-600"
-                size="sm"
-                asChild
-              >
-                <Link href={contactPath()}>Contact us</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap justify-between items-center mb-8">
-          <div className="flex flex-wrap gap-2 mb-4 md:mb-0">
-            {categories.map((category, index) => (
-              <Button
-                key={index}
-                variant={selectedCategory === category ? "default" : "outline"}
-                size="sm"
-                className={
-                  selectedCategory === category
-                    ? "bg-orange-500 hover:bg-orange-600"
-                    : ""
-                }
-                asChild
-              >
-                <a href={ourWorkPath(category)}>{category}</a>
-              </Button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Reels projects={filteredProjects} />
-        </div>
+    <div className="container space-y-8 px-4 md:px-6 mx-auto max-w-6xl">
+      <div className="flex flex-wrap gap-4 justify-center">
+        {categories.map((category, index) => (
+          <Button
+            key={index}
+            variant={selectedCategory === category ? "default" : "outline"}
+            size="sm"
+            asChild
+          >
+            <a href={ourWorkPath(category.toLowerCase())}>{category}</a>
+          </Button>
+        ))}
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Reels projects={filteredProjects} />
+      </div>
+    </div>
   );
 }

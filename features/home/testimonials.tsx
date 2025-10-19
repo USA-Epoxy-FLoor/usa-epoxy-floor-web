@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { ContainerLayout } from "@/components/ui/container-layout";
 import ParticleBackground from "@/components/ui/particle-background";
 import { Star } from "lucide-react";
 
@@ -28,32 +29,21 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section
-      id="testimonials"
-      className="w-full py-12 md:py-24 lg:py-32 light:bg-gray-50 relative"
-    >
+    <section id="testimonials" className="w-full relative py-16">
       <ParticleBackground />
-      <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-orange-500 px-3 py-1 text-sm text-white">
-              Testimonials
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              What Our Customers Say
-            </h2>
-            <p className="max-w-[900px] text-gray-500 dark:text-white/70 md:text-xl/relaxed">
-              Don&apos;t just take our word for it. Here&apos;s what our
-              satisfied customers have to say about our epoxy flooring services.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+      <ContainerLayout
+        className="relative"
+        tag="Testimonials"
+        title="What Our Customers Say"
+        intro="Don't just take our word for it. Here's what our
+              satisfied customers have to say about our epoxy flooring services."
+      >
+        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6">
           {testimonials.map((eachTestimonial) => {
             return (
               <Card
                 key={eachTestimonial.id}
-                className="flex flex-col justify-between"
+                className="flex flex-col justify-between text-left"
               >
                 <CardContent className="pt-6">
                   <div className="space-y-2">
@@ -81,7 +71,7 @@ export function Testimonials() {
             );
           })}
         </div>
-      </div>
+      </ContainerLayout>
     </section>
   );
 }
