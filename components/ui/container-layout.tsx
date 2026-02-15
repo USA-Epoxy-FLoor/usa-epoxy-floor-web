@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { PropsWithChildren } from "react";
 
-type ContainerLayoutProps = {
+export type ContainerLayoutProps = {
   className?: string;
   tag: string;
   title: string;
@@ -18,7 +18,7 @@ export const ContainerLayout = ({
     <section
       className={cn(
         "container px-4 md:px-6 mx-auto text-center flex flex-col items-center space-y-2",
-        className
+        className,
       )}
     >
       <div className="inline-block rounded-lg bg-orange-500 px-3 py-1 text-sm text-white">

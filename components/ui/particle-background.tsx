@@ -27,6 +27,7 @@ const ParticleBackground = () => {
       init();
     });
 
+    // eslint-disable-next-line react-hooks/unsupported-syntax
     class Particle {
       x: number;
       y: number;

@@ -38,7 +38,7 @@ const ServiceCard = ({
   description: string;
   icon: ReactNode;
 }) => (
-  <Card className="text-left min-w-xs flex-1">
+  <Card className="text-left min-w-xs flex-1 max-w-sm">
     <CardContent className="pt-6">
       <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-100 mb-4">
         {icon}
@@ -56,12 +56,12 @@ export const EuTeServices = () => {
   return (
     <section className="w-full py-8">
       <ContainerLayout
-        className="max-w-5xl"
+        className="max-w-6xl"
         tag="Our Services"
         title="Comprehensive Design & Build Solutions"
         intro="We offer a wide range of custom design and build services to create unique, functional spaces for commercial clients."
       >
-        <div className="mx-auto max-w-5xl gap-6 py-12 flex flex-wrap justify-center">
+        <div className="mx-auto max-w-6xl gap-6 py-12 flex flex-wrap justify-center">
           {serviceData.map((eachCard, i) => (
             <ServiceCard key={i} {...eachCard} />
           ))}

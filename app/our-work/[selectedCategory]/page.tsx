@@ -128,6 +128,34 @@ const projectData: ReelProps["projects"] = [
     category: "Residential",
     location: "New York",
   },
+  {
+    id: 17,
+    reelId: "DMocp6IgCbv",
+    title: "Stone Epoxy",
+    category: "Residential",
+    location: "Newburg NY",
+  },
+  {
+    id: 18,
+    reelId: "DMnyf33ASwL",
+    title: "Red Lava Epoxy",
+    category: "Residential",
+    location: "Poughkeepsie NY",
+  },
+  {
+    id: 19,
+    reelId: "DMnzccOAemi",
+    title: "3000Sq Garage",
+    category: "Commercial",
+    location: "Lake George NY",
+  },
+  {
+    id: 20,
+    reelId: "CbJTceltel3",
+    title: "3000Sq Garage",
+    category: "Commercial",
+    location: "Lake George NY",
+  },
 ];
 // Project categories for filtering
 const categories = [
@@ -148,7 +176,8 @@ export default async function OurWorkPage({
   const filteredProjects =
     selectedCategory !== "all"
       ? projectData.filter(
-          (project) => project.category.toLocaleLowerCase() === selectedCategory
+          (project) =>
+            project.category.toLocaleLowerCase() === selectedCategory,
         )
       : projectData;
 

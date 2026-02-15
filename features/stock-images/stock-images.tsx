@@ -1,72 +1,32 @@
-import { ContainerLayout } from "@/components/ui/container-layout";
+import {
+  ContainerLayout,
+  ContainerLayoutProps,
+} from "@/components/ui/container-layout";
 import Image from "next/image";
-import React from "react";
 
-const images = [
-  {
-    id: 1,
-    src: "/epoxy/epoxy-1.jpg",
-    alt: "Epoxy flooring in Garage",
-    caption: "Epoxy flooring in Garage",
-  },
-  {
-    id: 2,
-    src: "/epoxy/epoxy-2.jpg",
-    alt: "Epoxy flooring in Warehouse",
-    caption: "Epoxy flooring in Warehouse",
-  },
-  {
-    id: 3,
-    src: "/epoxy/epoxy-3.jpg",
-    alt: "Epoxy flooring in Bar",
-    caption: "Epoxy flooring in Bar",
-  },
-  {
-    id: 4,
-    src: "/epoxy/epoxy-4.jpg",
-    alt: "Epoxy flooring in Restaurant",
-    caption: "Epoxy flooring in Restaurant",
-  },
-  {
-    id: 5,
-    src: "/epoxy/epoxy-5.jpg",
-    alt: "Epoxy flooring in Garage 2",
-    caption: "Epoxy flooring in Garage",
-  },
-  {
-    id: 6,
-    src: "/epoxy/epoxy-6.jpg",
-    alt: "Epoxy flooring in Lounge",
-    caption: "Epoxy flooring in Lounge",
-  },
-  {
-    id: 7,
-    src: "/epoxy/epoxy-8.jpg",
-    alt: "Epoxy flooring in Office space",
-    caption: "Epoxy flooring in Office space",
-  },
-  {
-    id: 8,
-    src: "/epoxy/epoxy-9.jpg",
-    alt: "Epoxy flooring in Basement",
-    caption: "Epoxy flooring in Basement",
-  },
-  {
-    id: 9,
-    src: "/epoxy/epoxy-7.png",
-    alt: "Epoxy flooring in Store",
-    caption: "Epoxy flooring in Store",
-  },
-];
+export type StockImage = {
+  id: number;
+  src: string;
+  alt: string;
+  caption: string;
+};
 
-export const StockImages = () => {
+type StockImagesProps = { images: StockImage[] } & ContainerLayoutProps;
+
+export const StockImages = ({
+  images,
+  tag,
+  title,
+  intro,
+  className,
+}: StockImagesProps) => {
   return (
     <div className="w-full py-8 max-w-7xl mx-auto">
       <ContainerLayout
-        tag={"Inspiration"}
-        title={"Innovative Epoxy Flooring Designs"}
-        intro={"Tailored epoxy flooring for residential and commercial spaces"}
-        className="w-full"
+        tag={tag}
+        title={title}
+        intro={intro}
+        className={className}
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mx-auto mt-6 justify-items-center-safe content-center">
           {images.map((image) => (

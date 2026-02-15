@@ -27,11 +27,11 @@ export const Contact = ({
     <section
       className={cn(
         "w-full min-h-[50vh] flex items-center px-4 mb-8",
-        BACKGROUND_EVEN
+        BACKGROUND_EVEN,
       )}
     >
       <ContainerLayout tag={tag} title={title} intro={content}>
-        <div className="flex flex-wrap justify-center gap-3 mt-4">
+        <div className="flex flex-wrap justify-center gap-3 mt-4 max-w-lg mx-auto">
           <Button size="lg" asChild className="flex-1">
             <Link href={contactPath()}>{primaryAction}</Link>
           </Button>

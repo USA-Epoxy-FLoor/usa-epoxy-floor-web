@@ -12,9 +12,10 @@ type UseActionFeedbackOptions = {
 
 export const useActionFeedback = (
   actionState: ActionState,
-  options?: UseActionFeedbackOptions
+  options?: UseActionFeedbackOptions,
 ) => {
   const timeStampRef = useRef(actionState.timeStamp);
+  // eslint-disable-next-line react-hooks/refs
   const isUpdated = actionState.timeStamp !== timeStampRef.current;
   useEffect(() => {
     if (!isUpdated) return;

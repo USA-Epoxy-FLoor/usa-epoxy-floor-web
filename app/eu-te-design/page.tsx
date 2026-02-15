@@ -3,7 +3,8 @@ import ParticleBackground from "@/components/ui/particle-background";
 import { AboutEuTe } from "@/features/eu-te-design/about-eu-te";
 import { EuTeServices } from "@/features/eu-te-design/eu-te-services";
 import { Contact } from "@/features/about-us/contact";
-import { EuTeReels } from "@/features/eu-te-design/eu-te-reels";
+import { StockImages } from "@/features/stock-images";
+import { euTeImages } from "./eu-te-images";
 
 export default function EuTeDesignPage() {
   return (
@@ -12,7 +13,15 @@ export default function EuTeDesignPage() {
       <EuTeHero />
       <AboutEuTe />
       <EuTeServices />
-      <EuTeReels />
+      <StockImages
+        tag={"Our work"}
+        title={"Custom designs"}
+        intro={
+          "From floor to ceiling, we bring your vision to life with handcrafted, custom woodwork. We specialize in creating one-of-a-kind spaces through premium custom flooring, intricate wood art, and statement ceilings. Whether you’re looking for a signature furniture piece or durable, artisan countertops, our craftsmanship blends beauty and function to make your home truly yours."
+        }
+        className="w-full"
+        images={euTeImages}
+      />
 
       <Contact
         title="Ready to Transform Your Space?"
