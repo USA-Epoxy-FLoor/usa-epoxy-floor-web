@@ -18,7 +18,7 @@ export const euTeImages: StockImage[] = [
     id: 3,
     src: "/eu-te/Retro_Design.jpg",
     alt: "Retro design",
-    caption: "Retro design & restaurant renovation",
+    caption: "Restaurant design & renovation",
   },
   {
     id: 4,
@@ -67,5 +67,11 @@ export const euTeImages: StockImage[] = [
     src: "/eu-te/custom_epoxy_table.jpg",
     alt: "Custom epoxy table",
     caption: "Custom epoxy table",
+  },
+  {
+    id: 12,
+    src: "/eu-te/familly_room_renovation.jpg",
+    alt: "Family room renovation",
+    caption: "Family room renovation",
   },
 ];

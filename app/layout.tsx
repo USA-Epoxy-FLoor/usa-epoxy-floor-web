@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: "https://www.eutedesign.com/",
   title: "USA EPOXY FLOOR",
   description:
     "Transform your space with premium epoxy flooring solutions for residential, commercial, and industrial properties throughout NY, CT, NJ, MA and PA. Free quotes available.",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.usaepoxyfloor.com/",
+    url: "https://www.eutedesign.com/",
     title:
       "USA Epoxy Floor | Professional Epoxy Flooring Services in Poughkeepsie, NY",
     description:

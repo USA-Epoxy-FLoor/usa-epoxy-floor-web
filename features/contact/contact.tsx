@@ -19,7 +19,7 @@ import { ContactItem } from "./contact-item";
 export function Contact() {
   const [actionState, action] = useActionState(
     sendContactUsEmailAction,
-    EMPTY_ACTION_STATE
+    EMPTY_ACTION_STATE,
   );
 
   useActionFeedback(actionState, {
@@ -38,7 +38,7 @@ export function Contact() {
       id="contact"
       className={cn(
         "w-full min-h-[100vh] flex items-center scroll-mt-16",
-        BACKGROUND_EVEN
+        BACKGROUND_EVEN,
       )}
     >
       <ContainerLayout
@@ -50,7 +50,7 @@ export function Contact() {
                 for your needs."
       >
         <div className="flex gap-12 flex-wrap justify-center mt-6">
-          <Card className="border flex-2/5">
+          <Card className="border flex-2/5 justify-center">
             <CardHeader>
               <CardTitle className="text-left text-xl">
                 Get a Free Quote
@@ -113,8 +113,18 @@ export function Contact() {
               </form>
             </CardContent>
           </Card>
-          <div className="flex flex-col space-y-4 py-4">
+          <div className="flex flex-1/5 flex-col space-y-4 py-4">
             <div className="space-y-4">
+              <div className="relative aspect-video overflow-hidden max-w-full">
+                <video
+                  preload="none"
+                  className="absolute h-full object-cover w-full aspect-auto rounded-md"
+                  autoPlay
+                  muted
+                  src="/eu-te/usa_epoxy_office.mov"
+                  loop
+                />
+              </div>
               <ContactItem
                 icon={<LucidePhone className="h-5 w-5 text-orange-500 pt-1" />}
                 href="tel:+18454642539"

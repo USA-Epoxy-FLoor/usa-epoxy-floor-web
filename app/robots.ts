@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/private/", "/admin/"],
     },
-    sitemap: "https://www.usaepoxyfloor.com/sitemap.xml",
+    sitemap: "https://www.eutedesign.com/sitemap.xml",
   };
 }
