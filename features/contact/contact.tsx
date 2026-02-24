@@ -113,7 +113,7 @@ export function Contact() {
               </form>
             </CardContent>
           </Card>
-          <div className="flex flex-1/5 flex-col space-y-4 py-4">
+          <div className="flex flex-1/5 flex-col space-y-4 py-6">
             <div className="space-y-4">
               <div className="relative aspect-video overflow-hidden max-w-full">
                 <video
