@@ -64,6 +64,7 @@ export function Contact() {
                     required
                     placeholder="John Doe"
                     name="name"
+                    className="focus:placeholder-transparent"
                     defaultValue={
                       (actionState?.payload?.get("name") as string) ?? ""
                     }
@@ -76,6 +77,7 @@ export function Contact() {
                     placeholder="john@example.com"
                     type="email"
                     name="email"
+                    className="focus:placeholder-transparent"
                     defaultValue={
                       (actionState?.payload?.get("email") as string) ?? ""
                     }
@@ -88,6 +90,7 @@ export function Contact() {
                     required
                     name="phone"
                     type="tel"
+                    className="focus:placeholder-transparent"
                     placeholder="(555) 123-4567"
                     defaultValue={
                       (actionState?.payload?.get("phone") as string) ?? ""
@@ -101,6 +104,7 @@ export function Contact() {
                   required
                   placeholder="Tell us about your project (size, location, timeline, etc.)"
                   name="message"
+                  className="focus:placeholder-transparent"
                   defaultValue={
                     (actionState?.payload?.get("message") as string) ?? ""
                   }
